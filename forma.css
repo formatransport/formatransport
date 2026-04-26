@@ -66,10 +66,21 @@ lead{
   margin:0 0 8px;
 }
 .cta-group{display:flex;gap:12px;margin:18px 0 8px;flex-wrap:wrap;justify-content:center}
-.trust-points{list-style:none;display:flex;gap:16px;padding:0;margin:14px 0 0;color:#334155;flex-wrap:wrap;justify-content:center}
-
 .trust-points{
-  color:#000000; /* svart */
+  list-style:none;
+  display:flex;
+  gap:16px;
+  padding:0;
+  margin:14px 0 0;
+  color:#000000;
+  flex-wrap:wrap;
+  justify-content:center
+}
+.hero-tagline{
+  font-size:1.1rem;
+  font-weight:600;
+  color:#475569;
+  margin:6px 0 10px;
 }
 
 /* ===== Sektioner ===== */
