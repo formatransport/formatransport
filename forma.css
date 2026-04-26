@@ -68,6 +68,10 @@ lead{
 .cta-group{display:flex;gap:12px;margin:18px 0 8px;flex-wrap:wrap;justify-content:center}
 .trust-points{list-style:none;display:flex;gap:16px;padding:0;margin:14px 0 0;color:#334155;flex-wrap:wrap;justify-content:center}
 
+.trust-points{
+  color:#000000; /* svart */
+}
+
 /* ===== Sektioner ===== */
 .section{padding:68px 0;background:#fff}
 .section-alt{background:var(--surface)}
