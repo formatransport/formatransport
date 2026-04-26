@@ -101,8 +101,21 @@ lead{
 .checklist{list-style:none;padding:0;margin:16px 0 0}
 .checklist li{margin:0 0 6px}
 .checklist li::before{content:"✓ ";color:var(--accent);font-weight:800}
-.about-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.about-gallery img{border-radius:14px;height:180px;object-fit:cover;box-shadow:var(--shadow-1)}
+.about-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr; /* två lite bredare bilder */
+  gap:16px;
+}
+
+.about-gallery img{
+  border-radius:16px;
+  height:220px;        /* lite högre */
+  width:100%;
+  object-fit:contain;  /* SLUTAR skära bilderna */
+  background:#f6f8fb;  /* snygg neutral bakgrund */
+  padding:10px;
+  box-shadow:var(--shadow-1);
+}
 
 /* Formulär */
 .form{display:flex;flex-direction:column;gap:16px}
