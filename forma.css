@@ -47,7 +47,7 @@ a{color:inherit;text-decoration:none}
 .menu-toggle .bar{display:block;width:24px;height:2px;background:var(--text);margin:5px 0}
 
 /* ===== Hero (utan bild – stor, centrerad logga) ===== */
-hero{
+.hero{
   background:#ffffff;   /* vit bakgrund */
   color:#0b1220;        /* mörk text */
 }
@@ -60,7 +60,7 @@ hero{
   width:auto;filter: drop-shadow(0 8px 18px rgba(0,0,0,.28));
 }
 .hero h1{font-size:clamp(2rem,3vw,3rem);line-height:1.12;margin:0 0 12px}
-lead{
+.lead{
   color:#475569;
   font-size:1.08rem;
   margin:0 0 8px;
@@ -101,21 +101,6 @@ lead{
 .checklist{list-style:none;padding:0;margin:16px 0 0}
 .checklist li{margin:0 0 6px}
 .checklist li::before{content:"✓ ";color:var(--accent);font-weight:800}
-.about-gallery{
-  display:grid;
-  grid-template-columns:1fr 1fr; /* två lite bredare bilder */
-  gap:16px;
-}
-
-.about-gallery img{
-  border-radius:16px;
-  height:220px;        /* lite högre */
-  width:100%;
-  object-fit:contain;  /* SLUTAR skära bilderna */
-  background:#f6f8fb;  /* snygg neutral bakgrund */
-  padding:10px;
-  box-shadow:var(--shadow-1);
-}
 
 /* Formulär */
 .form{display:flex;flex-direction:column;gap:16px}
@@ -160,4 +145,21 @@ input.invalid,textarea.invalid{border-color:#ff5a5a;box-shadow:0 0 0 3px rgba(25
   }
   .form-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
+}
+
+/* === Om oss – bilder till höger (fixad layout) === */
+.about-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr; /* exakt två bilder */
+  gap:18px;
+  width:100%;
+}
+
+.about-gallery img{
+  width:100%;
+  height:240px;
+  object-fit:cover;      /* fyller snyggt */
+  object-position:center;
+  border-radius:18px;
+  box-shadow:var(--shadow-1);
 }
