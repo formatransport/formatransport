@@ -154,6 +154,13 @@ input.invalid,textarea.invalid{border-color:#ff5a5a;box-shadow:0 0 0 3px rgba(25
 
 /* === Om oss – bilder till höger (fixad layout) === */
 
+.about-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr; /* exakt två bilder */
+  gap:18px;
+  width:100%;
+}
+
 .about-gallery img{
   width:100%;
   height:240px;
