@@ -174,3 +174,18 @@ input.invalid,textarea.invalid{border-color:#ff5a5a;box-shadow:0 0 0 3px rgba(25
     grid-template-columns:1fr 1.4fr;
   }
 }
+
+
+.hero-accent-line{
+  width:80px;
+  height:4px;
+  background:#ff7a00;
+  margin:12px auto 10px;
+  border-radius:2px;
+}
+
+.hero-sub{
+  font-weight:600;
+  color:#475569;
+  margin-bottom:10px;
+}
