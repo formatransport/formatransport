@@ -14,8 +14,7 @@ const offertForm = document.getElementById('offertForm');
 const formSuccess = document.getElementById('formSuccess');
 
 if (offertForm){
-  offertForm.addEventListener('submit', (e)=>{
-    e.preventDefault();
+ 
 
     const requiredIds = ['namn','telefon','epost','upphamtning','leverans','datum'];
     let valid = true;
