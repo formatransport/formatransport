@@ -122,12 +122,20 @@ input.invalid,textarea.invalid{border-color:#ff5a5a;box-shadow:0 0 0 3px rgba(25
 
 /* Kontakt */
 .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:24px;align-items:center}
+.contact-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
 .contact-visual img{
   width:100%;
+  max-width:420px;
   height:auto;
+  max-height:320px;
+  object-fit:contain;
   border-radius:16px;
   box-shadow:var(--shadow-1);
-  object-fit:contain;
 }
 .contact-list{list-style:none;padding:0;margin:12px 0 18px;display:grid;gap:10px}
 .contact-list a{font-weight:700}
