@@ -193,3 +193,37 @@ input.invalid,textarea.invalid{border-color:#ff5a5a;box-shadow:0 0 0 3px rgba(25
   margin-bottom:12px;
   color:#475569;
 }
+
+@media (max-width:720px){
+
+  .hero-inner{
+    padding:60px 0 50px;
+  }
+
+  .hero-title{
+    font-size:1.9rem;
+    line-height:1.15;
+    text-align:center;
+  }
+
+  .hero-tagline{
+    font-size:0.9rem;
+    text-align:center;
+  }
+
+  .lead{
+    font-size:0.95rem;
+    text-align:center;
+    padding:0 10px;
+  }
+
+  .cta-group{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .btn-lg{
+    width:100%;
+    max-width:260px;
+  }
+}
