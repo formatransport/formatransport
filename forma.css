@@ -227,3 +227,38 @@ input.invalid,textarea.invalid{border-color:#ff5a5a;box-shadow:0 0 0 3px rgba(25
     max-width:260px;
   }
 }
+
+@media (max-width:720px){
+
+  .hero-inner.no-img{
+    padding:60px 16px 40px;
+  }
+
+  .hero-tagline{
+    font-size:1.4rem;
+    font-weight:700;
+  }
+
+  .lead{
+    font-size:0.95rem;
+    line-height:1.5;
+  }
+
+  .card{
+    padding:16px;
+  }
+
+  .card-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .footer-grid{
+    text-align:center;
+  }
+
+  .footer-logo{
+    height:38px;
+    margin:0 auto;
+  }
+}
