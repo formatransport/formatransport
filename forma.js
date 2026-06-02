@@ -43,7 +43,9 @@ if (offertForm) {
     });
 
     if (!valid) {
-      e.preventDefault();
+    if (!valid) {
+  e.preventDefault();
+}
     }
   });
 }
