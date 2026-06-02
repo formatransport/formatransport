@@ -122,7 +122,13 @@ input.invalid,textarea.invalid{border-color:#ff5a5a;box-shadow:0 0 0 3px rgba(25
 
 /* Kontakt */
 .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:24px;align-items:center}
-.contact-visual img{border-radius:16px;box-shadow:var(--shadow-1);aspect-ratio:16/10;object-fit:cover}
+.contact-visual img{
+  width:100%;
+  height:auto;
+  border-radius:16px;
+  box-shadow:var(--shadow-1);
+  object-fit:contain;
+}
 .contact-list{list-style:none;padding:0;margin:12px 0 18px;display:grid;gap:10px}
 .contact-list a{font-weight:700}
 .coverage{background:#eef3f9;border:1px solid #dfe7f2;padding:12px 14px;border-radius:12px}
