@@ -56,3 +56,20 @@ const yearEl = document.getElementById('year');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
+
+
+function cookieChoice(type){
+  localStorage.setItem("cookieConsent", type);
+  document.getElementById("cookieConsent").style.display = "none";
+}
+
+function toggleDetails(){
+  document.getElementById("cookieDetails").classList.toggle("hidden");
+}
+
+window.addEventListener("load", () => {
+  const consent = localStorage.getItem("cookieConsent");
+  if(consent){
+    document.getElementById("cookieConsent").style.display = "none";
+  }
+});
