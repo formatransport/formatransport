@@ -14,6 +14,30 @@
   <!-- Styles -->
   <link rel="stylesheet" href="forma.css">
 </head>
+  <div id="cookieConsent" class="cookie-consent">
+  <div class="cookie-box">
+    <h3>This website uses cookies</h3>
+
+    <p>
+      We use cookies to personalise content and ads, to provide social media features and to analyse our traffic.
+      We also share information about your use of our site with our social media, advertising and analytics partners.
+    </p>
+
+    <div class="cookie-buttons">
+      <button onclick="cookieChoice('deny')" class="btn-cookies deny">Deny</button>
+      <button onclick="cookieChoice('selection')" class="btn-cookies select">Allow selection</button>
+      <button onclick="cookieChoice('all')" class="btn-cookies allow">Allow all</button>
+    </div>
+
+    <small onclick="toggleDetails()" class="cookie-details-toggle">
+      Show details
+    </small>
+
+    <div id="cookieDetails" class="cookie-details hidden">
+      <p>Necessary cookies are always enabled. Preferences, statistics and marketing can be controlled.</p>
+    </div>
+  </div>
+</div>
 <body>
   <a class="skip-link" href="#main">Hoppa till innehåll</a>
 
