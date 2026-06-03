@@ -298,3 +298,69 @@ input.invalid,textarea.invalid{border-color:#ff5a5a;box-shadow:0 0 0 3px rgba(25
   }
 
 }
+
+.cookie-consent{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  z-index:9999;
+}
+
+.cookie-box{
+  background:#fff;
+  width:100%;
+  max-width:700px;
+  padding:20px;
+  border-radius:16px 16px 0 0;
+  box-shadow:0 -10px 30px rgba(0,0,0,.2);
+}
+
+.cookie-box h3{
+  margin:0 0 10px;
+  font-size:18px;
+}
+
+.cookie-box p{
+  font-size:14px;
+  color:#444;
+  line-height:1.5;
+}
+
+.cookie-buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.btn-cookies{
+  flex:1;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.deny{background:#e74c3c;color:#fff;}
+.select{background:#f1c40f;}
+.allow{background:#2ecc71;color:#fff;}
+
+.cookie-details-toggle{
+  display:inline-block;
+  margin-top:10px;
+  font-size:12px;
+  color:#0077cc;
+  cursor:pointer;
+}
+
+.cookie-details{
+  margin-top:10px;
+  font-size:12px;
+  color:#666;
+}
+
+.hidden{display:none;}
