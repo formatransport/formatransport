@@ -345,9 +345,21 @@ input.invalid,textarea.invalid{border-color:#ff5a5a;box-shadow:0 0 0 3px rgba(25
   font-weight:600;
 }
 
-.deny{background:#e74c3c;color:#fff;}
-.select{background:#f1c40f;}
-.allow{background:#2ecc71;color:#fff;}
+.allow{
+  background:#ff7a00;
+  color:white;
+}
+
+.select{
+  background:#f1f5f9;
+  color:#0b1220;
+}
+
+.deny{
+  background:white;
+  color:#0b1220;
+  border:1px solid #d1d5db;
+}
 
 .cookie-details-toggle{
   display:inline-block;
