@@ -43,6 +43,7 @@ if (offertForm) {
     });
 
     if (!valid) {
+    if (!valid) {
   e.preventDefault();
 }
     }
