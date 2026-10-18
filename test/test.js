@@ -880,14 +880,50 @@
     quote.textContent = review.text;
     quote.classList.remove("expanded");
 
-    author.textContent = review.name;
+  if (!document.getElementById("review-avatar-style")) {
+  const avatarStyle = document.createElement("style");
+  avatarStyle.id = "review-avatar-style";
 
-    author.dataset.initials = review.name
-      .split(" ")
-      .slice(0, 2)
-      .map(part => part[0])
-      .join("")
-      .toUpperCase();
+  avatarStyle.textContent = `
+    #review-author::before {
+      content: none !important;
+      display: none !important;
+    }
+
+    .review-avatar {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      flex: none;
+      border-radius: 50%;
+      background: #edf1ec;
+      color: #52624f;
+      font-size: 11px;
+      letter-spacing: .03em;
+    }
+  `;
+
+  document.head.append(avatarStyle);
+}
+
+const nameParts = review.name.trim().split(/\s+/);
+
+const initials = nameParts.length > 1
+  ? nameParts[0][0] + nameParts[nameParts.length - 1][0]
+  : nameParts[0][0];
+
+author.replaceChildren();
+
+if (review.source !== "TIMOCOM") {
+  const avatar = document.createElement("span");
+  avatar.className = "review-avatar";
+  avatar.textContent = initials.toUpperCase();
+  avatar.setAttribute("aria-hidden", "true");
+  author.append(avatar);
+}
+
+author.append(document.createTextNode(review.name));
 
     if (note) {
       note.textContent = "";
