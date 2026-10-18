@@ -528,6 +528,49 @@
       html { scroll-behavior: auto; }
       * { transition: none !important; }
     }
+
+    /* Kompakt recensionsdel */
+    .reviews-section { padding-block: 54px; background: #fff; }
+    .reviews-section > .container { max-width: 820px; }
+    .reviews-section h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 22px; }
+    .reviews-slider { margin-top: 0; }
+    .reviews-track { background: #fff; border: 0; border-radius: 0; align-items: flex-start; }
+    .review-card { padding: 10px 2px 18px; }
+    .review-top { margin-bottom: 14px; }
+    .review-source, .review-rating { font-size: 12px; }
+    .review-quote { font-size: 18px; line-height: 1.65; margin-bottom: 16px; }
+    .review-person { font-size: 14px; }
+    .review-excerpt { font-size: 11px; }
+    .reviews-controls { margin-top: 4px; gap: 14px; }
+    .reviews-arrows button { width: 44px; height: 44px; font-size: 20px; border-color: #e2e5e3; }
+    .review-counter { font-size: 12px; }
+    @media (max-width: 560px) {
+      .reviews-section { padding-block: 38px; }
+      .review-card { padding: 8px 2px 16px; }
+      .review-quote { font-size: 16px; }
+    }
+    .review-stars {
+      color: #b87908;
+      font-size: 19px;
+      letter-spacing: 3px;
+      line-height: 1;
+    }
+
+    /* Mindre recensionsrutor med höjd efter innehållet */
+    .reviews-section { padding-block: 36px; }
+    .reviews-section > .container { max-width: 660px; }
+    .reviews-section h2 { font-size: clamp(24px, 3vw, 30px); margin-bottom: 18px; }
+    .reviews-track { overflow-y: hidden; }
+    .review-card { padding: 8px 2px 12px; }
+    .review-top { margin-bottom: 10px; }
+    .review-quote { font-size: 16px; line-height: 1.55; margin-bottom: 12px; }
+    .review-person { font-size: 13px; }
+    .review-excerpt { font-size: 10px; margin-top: 2px; }
+    .reviews-controls { margin-top: 8px; }
+    @media (max-width: 560px) {
+      .reviews-section { padding-block: 28px; }
+      .review-quote { font-size: 15px; }
+    }
   </style>
 </head>
 
@@ -706,15 +749,13 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="reviews-title">
+    <section class="section reviews-section" aria-labelledby="reviews-title">
       <div class="container">
-        <p class="eyebrow">Kundernas upplevelser</p>
+        
 
         <h2 id="reviews-title">Vad våra kunder säger.</h2>
 
-        <p class="muted">
-          Omdömen från Google, Facebook, Clicktrans och TIMOCOM.
-        </p>
+        
 
         <div
           class="reviews-slider"
@@ -752,12 +793,7 @@
               class="review-counter"
             ></span>
 
-            <button
-              type="button"
-              id="review-pause"
-              class="review-pause"
-              aria-pressed="false"
-            >Pausa bildspelet</button>
+            
           </div>
         </div>
 
@@ -769,11 +805,7 @@
           </p>
         </noscript>
 
-        <p class="reviews-note">
-          Ett urval av kundomdömen. Vissa texter visas som utdrag.
-          Betyg och rekommendationer återges enligt respektive
-          plattform.
-        </p>
+        
       </div>
     </section>
 
@@ -956,7 +988,15 @@
 
         const rating = document.createElement("span");
         rating.className = "review-rating";
-        rating.textContent = review.rating;
+        const hasFiveStars = review.source === "Google" ||
+          review.source === "TIMOCOM";
+        rating.textContent = hasFiveStars ? "★★★★★" : review.rating;
+        if (hasFiveStars) {
+          rating.classList.add("review-stars");
+          rating.setAttribute("role", "img");
+          rating.setAttribute("aria-label", review.rating);
+          rating.title = review.rating;
+        }
 
         top.append(source, rating);
 
@@ -985,7 +1025,7 @@
       });
 
       const counter = document.getElementById("review-counter");
-      const pauseButton = document.getElementById("review-pause");
+
 
       const reducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
@@ -995,6 +1035,7 @@
       let hovering = false;
       let visible = false;
       let touching = false;
+      let touchRecovery = null;
       let lastInteraction = 0;
       let activeIndex = 0;
       let previousWidth = track.clientWidth;
@@ -1015,6 +1056,11 @@
 
       function updateCounter() {
         activeIndex = currentIndex();
+        const activeCard = track.children[activeIndex];
+        if (activeCard) {
+          const height = activeCard.offsetHeight + "px";
+          if (track.style.height !== height) track.style.height = height;
+        }
         counter.textContent =
           (activeIndex + 1) + " / " + reviews.length;
       }
@@ -1030,16 +1076,7 @@
         });
       }
 
-      function updatePauseButton() {
-        pauseButton.textContent = paused
-          ? "Starta bildspelet"
-          : "Pausa bildspelet";
 
-        pauseButton.setAttribute(
-          "aria-pressed",
-          String(paused)
-        );
-      }
 
       document.getElementById("review-prev")
         .addEventListener("click", () => {
@@ -1053,27 +1090,30 @@
           move(1);
         });
 
-      pauseButton.addEventListener("click", () => {
-        paused = !paused;
-        updatePauseButton();
+
+
+      slider.addEventListener("pointerenter", event => {
+        hovering = event.pointerType === "mouse";
       });
 
-      slider.addEventListener("mouseenter", () => {
-        hovering = true;
-      });
-
-      slider.addEventListener("mouseleave", () => {
+      slider.addEventListener("pointerleave", () => {
         hovering = false;
       });
 
-      track.addEventListener("pointerdown", () => {
+      track.addEventListener("pointerdown", event => {
         touching = true;
+        window.clearTimeout(touchRecovery);
+        touchRecovery = window.setTimeout(() => {
+          touching = false;
+        }, 12000);
+        if (event.pointerType !== "mouse") hovering = false;
         lastInteraction = Date.now();
       });
 
       function endTouch() {
         if (touching) {
           touching = false;
+          window.clearTimeout(touchRecovery);
           lastInteraction = Date.now();
         }
       }
@@ -1106,7 +1146,7 @@
       if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver(entries => {
           visible = entries[0].isIntersecting;
-        }, { threshold: 0.35 });
+        }, { threshold: 0.1 });
 
         observer.observe(slider);
       } else {
@@ -1114,9 +1154,13 @@
       }
 
       window.setInterval(() => {
-        const focused = slider.contains(document.activeElement);
+        const focusedElement = document.activeElement;
+        const focused = focusedElement &&
+          slider.contains(focusedElement) &&
+          window.matchMedia("(hover: hover) and (pointer: fine)").matches &&
+          focusedElement.matches(":focus-visible");
         const recentlyUsed =
-          Date.now() - lastInteraction < 10000;
+          Date.now() - lastInteraction < 6000;
 
         if (
           !paused &&
@@ -1129,7 +1173,7 @@
         ) {
           move(1);
         }
-      }, 6000);
+      }, 4500);
 
       function adjustWidth() {
         const width = track.clientWidth;
@@ -1137,6 +1181,7 @@
         if (width && width !== previousWidth) {
           previousWidth = width;
           track.scrollLeft = activeIndex * width;
+          updateCounter();
         }
       }
 
@@ -1149,12 +1194,12 @@
       reducedMotion.addEventListener("change", event => {
         if (event.matches) {
           paused = true;
-          updatePauseButton();
+
         }
       });
 
       updateCounter();
-      updatePauseButton();
+
     })();
   </script>
 </body>
