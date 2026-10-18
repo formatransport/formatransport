@@ -18,9 +18,7 @@
       --line: #e2e5e3;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -45,7 +43,10 @@
       text-decoration: none;
     }
 
-    a:focus-visible {
+    button { font: inherit; }
+
+    a:focus-visible,
+    button:focus-visible {
       outline: 3px solid var(--orange);
       outline-offset: 5px;
     }
@@ -64,9 +65,7 @@
       background: #fff;
     }
 
-    .skip-link:focus {
-      top: 12px;
-    }
+    .skip-link:focus { top: 12px; }
 
     .header {
       border-bottom: 1px solid var(--line);
@@ -168,17 +167,11 @@
       font-size: 24px;
     }
 
-    p {
-      margin: 0 0 20px;
-    }
+    p { margin: 0 0 20px; }
 
-    .muted {
-      color: var(--muted);
-    }
+    .muted { color: var(--muted); }
 
-    .hero {
-      padding-block: 72px;
-    }
+    .hero { padding-block: 72px; }
 
     .hero-grid {
       display: grid;
@@ -227,9 +220,7 @@
       border-left: 1px solid var(--line);
     }
 
-    .service-link:hover {
-      background: var(--light);
-    }
+    .service-link:hover { background: var(--light); }
 
     .service-link h2 {
       margin: 0 0 10px;
@@ -246,9 +237,7 @@
       font-size: 28px;
     }
 
-    .section {
-      padding-block: 88px;
-    }
+    .section { padding-block: 88px; }
 
     .about-grid {
       display: grid;
@@ -257,9 +246,7 @@
       align-items: center;
     }
 
-    .about-text p {
-      color: var(--muted);
-    }
+    .about-text p { color: var(--muted); }
 
     .about-photo {
       width: 100%;
@@ -274,9 +261,7 @@
       border-bottom: 1px solid currentColor;
     }
 
-    .benefits-section {
-      background: var(--light);
-    }
+    .benefits-section { background: var(--light); }
 
     .section-intro {
       max-width: 620px;
@@ -294,13 +279,133 @@
       border-top: 2px solid var(--orange);
     }
 
-    .benefit h3 {
-      font-size: 22px;
-    }
+    .benefit h3 { font-size: 22px; }
 
     .benefit p {
       margin: 0;
       color: var(--muted);
+    }
+
+    .reviews-slider {
+      margin-top: 32px;
+      min-width: 0;
+    }
+
+    .reviews-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--light);
+      overscroll-behavior-x: contain;
+    }
+
+    .reviews-track::-webkit-scrollbar { display: none; }
+
+    .review-card {
+      flex: 0 0 100%;
+      min-width: 0;
+      padding: 42px;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      overflow-wrap: anywhere;
+    }
+
+    .review-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .review-source {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .review-rating {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--orange-dark);
+    }
+
+    .review-quote {
+      margin: 0 0 24px;
+      max-width: 850px;
+      font-size: clamp(20px, 2.3vw, 28px);
+      line-height: 1.55;
+      letter-spacing: -0.02em;
+    }
+
+    .review-person {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .review-excerpt {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .reviews-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .reviews-arrows {
+      display: flex;
+      gap: 8px;
+    }
+
+    .reviews-controls button {
+      min-height: 44px;
+      border: 1px solid #c8ceca;
+      border-radius: 5px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .reviews-arrows button {
+      width: 46px;
+      font-size: 22px;
+    }
+
+    .reviews-controls button:hover {
+      background: var(--light);
+    }
+
+    .review-counter {
+      color: var(--muted);
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .reviews-controls .review-pause {
+      margin-left: auto;
+      padding: 10px 14px;
+      font-size: 13px;
+    }
+
+    .reviews-note {
+      max-width: 760px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .contact-section {
+      border-top: 1px solid var(--line);
     }
 
     .contact {
@@ -310,13 +415,9 @@
       gap: 40px;
     }
 
-    .contact h2 {
-      max-width: 580px;
-    }
+    .contact h2 { max-width: 580px; }
 
-    .contact p {
-      color: var(--muted);
-    }
+    .contact p { color: var(--muted); }
 
     .contact-details {
       display: grid;
@@ -345,9 +446,7 @@
       gap: 24px;
     }
 
-    .footer p {
-      margin: 0;
-    }
+    .footer p { margin: 0; }
 
     .footer-links {
       display: flex;
@@ -373,17 +472,9 @@
         gap: 36px;
       }
 
-      .hero-description {
-        max-width: 600px;
-      }
-
-      .hero-photo {
-        max-width: 680px;
-      }
-
-      .about-photo {
-        max-width: 620px;
-      }
+      .hero-description { max-width: 600px; }
+      .hero-photo { max-width: 680px; }
+      .about-photo { max-width: 620px; }
 
       .benefits {
         grid-template-columns: 1fr;
@@ -397,9 +488,7 @@
     }
 
     @media (max-width: 560px) {
-      .logo {
-        width: 165px;
-      }
+      .logo { width: 165px; }
 
       .nav {
         gap: 14px 18px;
@@ -411,50 +500,41 @@
         padding: 9px 14px;
       }
 
-      .hero {
-        padding-block: 42px;
-      }
+      .hero { padding-block: 42px; }
+      .hero-description { font-size: 17px; }
+      .section { padding-block: 56px; }
 
-      .hero-description {
-        font-size: 17px;
-      }
+      .service-links { grid-template-columns: 1fr; }
 
-      .section {
-        padding-block: 56px;
-      }
-
-      .service-links {
-        grid-template-columns: 1fr;
-      }
-
-      .service-link {
-        padding: 28px 8px;
-      }
+      .service-link { padding: 28px 8px; }
 
       .service-link + .service-link {
         border-left: 0;
         border-top: 1px solid var(--line);
       }
 
-      .actions .button {
-        flex: 1 1 160px;
+      .actions .button { flex: 1 1 160px; }
+
+      .review-card { padding: 26px 22px; }
+
+      .reviews-controls { gap: 12px; }
+
+      .reviews-controls .review-pause {
+        font-size: 12px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      * {
-        transition: none !important;
-      }
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
     }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#innehall">Hoppa till innehåll</a>
+  <a class="skip-link" href="#innehall">
+    Hoppa till innehåll
+  </a>
 
   <header class="header">
     <div class="container header-inner">
@@ -474,16 +554,20 @@
         <a href="uthyrning.html">Uthyrning</a>
         <a href="#om-oss">Om oss</a>
         <a href="#kontakt">Kontakt</a>
-        <a class="button" href="../#offert">Begär offert</a>
+        <a class="button" href="transport.html#offert">
+          Begär offert
+        </a>
       </nav>
     </div>
   </header>
 
   <main id="innehall">
+
     <section class="hero">
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Transporter &amp; uthyrning</p>
+
           <h1>Transporter formade efter dina behov.</h1>
 
           <p class="hero-description">
@@ -541,6 +625,7 @@
       <div class="container about-grid">
         <div class="about-text">
           <p class="eyebrow">Om Forma Transport</p>
+
           <h2>Personlig service.<br>Ansvar i varje steg.</h2>
 
           <p>
@@ -581,7 +666,9 @@
       <div class="container">
         <div class="section-intro">
           <p class="eyebrow">Så arbetar vi</p>
+
           <h2>Enkelt att komma igång.<br>Tryggt hela vägen.</h2>
+
           <p class="muted">
             Vi tror på tydliga besked, personlig kontakt
             och lösningar som passar uppdraget.
@@ -619,19 +706,98 @@
       </div>
     </section>
 
-    <section class="section" id="kontakt">
+    <section class="section" aria-labelledby="reviews-title">
+      <div class="container">
+        <p class="eyebrow">Kundernas upplevelser</p>
+
+        <h2 id="reviews-title">Vad våra kunder säger.</h2>
+
+        <p class="muted">
+          Omdömen från Google, Facebook, Clicktrans och TIMOCOM.
+        </p>
+
+        <div
+          class="reviews-slider"
+          id="reviews-slider"
+          role="region"
+          aria-label="Kundrecensioner"
+          aria-roledescription="karusell"
+        >
+          <div
+            class="reviews-track"
+            id="reviews-track"
+            tabindex="0"
+            aria-label="Recensioner. Svep eller använd pilknapparna för att bläddra."
+          ></div>
+
+          <div class="reviews-controls">
+            <div class="reviews-arrows">
+              <button
+                type="button"
+                id="review-prev"
+                aria-label="Föregående recension"
+                aria-controls="reviews-track"
+              >←</button>
+
+              <button
+                type="button"
+                id="review-next"
+                aria-label="Nästa recension"
+                aria-controls="reviews-track"
+              >→</button>
+            </div>
+
+            <span
+              id="review-counter"
+              class="review-counter"
+            ></span>
+
+            <button
+              type="button"
+              id="review-pause"
+              class="review-pause"
+              aria-pressed="false"
+            >Pausa bildspelet</button>
+          </div>
+        </div>
+
+        <noscript>
+          <p>
+            ”Otroligt smidigt och hjälpsamma!
+            Rekommenderar verkligen.”
+            – Adnan Sahuric, Google, 5 av 5.
+          </p>
+        </noscript>
+
+        <p class="reviews-note">
+          Ett urval av kundomdömen. Vissa texter visas som utdrag.
+          Betyg och rekommendationer återges enligt respektive
+          plattform.
+        </p>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="kontakt">
       <div class="container contact">
         <div>
           <p class="eyebrow">Kontakt</p>
+
           <h2>Vad behöver du hjälp med?</h2>
+
           <p>
             Berätta om din transport eller när du vill hyra.
             Vi återkommer med ett förslag.
           </p>
 
           <div class="actions">
-            <a class="button" href="../#offert">Begär transportoffert</a>
-            <a class="button button-outline" href="uthyrning.html">
+            <a class="button" href="transport.html#offert">
+              Begär transportoffert
+            </a>
+
+            <a
+              class="button button-outline"
+              href="uthyrning.html#bokning"
+            >
               Fråga om uthyrning
             </a>
           </div>
@@ -645,6 +811,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
@@ -666,5 +833,329 @@
       <p>&copy; Forma Transport AB</p>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      const slider = document.getElementById("reviews-slider");
+      const track = document.getElementById("reviews-track");
+
+      if (!slider || !track) return;
+
+      const reviews = [
+        {
+          source: "Google",
+          rating: "5 av 5",
+          name: "Jesper Lindstrom",
+          text: "Kanon hela vägen!",
+          excerpt: true
+        },
+        {
+          source: "Google",
+          rating: "5 av 5",
+          name: "Camilla Löf",
+          text: "Mycket nöjd med allt från kontakt, flexibilitet och hantering",
+          excerpt: true
+        },
+        {
+          source: "Google",
+          rating: "5 av 5",
+          name: "Adnan Sahuric",
+          text: "Otroligt smidigt och hjälpsamma! Rekommenderar verkligen."
+        },
+        {
+          source: "Facebook",
+          rating: "Rekommenderar",
+          name: "Emma Llewellyn",
+          text: "Smidig och pålitlig! Kommer använda igen",
+          excerpt: true
+        },
+        {
+          source: "Facebook",
+          rating: "Rekommenderar",
+          name: "Nathalie Maria Helena",
+          text: "Väldigt bra företag att ha och göra med. Snabb återkoppling och bra priser!",
+          excerpt: true
+        },
+        {
+          source: "Facebook",
+          rating: "Rekommenderar",
+          name: "Rasoul Kariminezhad",
+          text: "Allt rullade på smidigt, punktligt och utan några som helst problem.",
+          excerpt: true
+        },
+        {
+          source: "Facebook",
+          rating: "Rekommenderar",
+          name: "Tommy Pääkkönen",
+          text: "Grymt nöjd och gods leveransen kom fram i tid.",
+          excerpt: true
+        },
+        {
+          source: "Facebook",
+          rating: "Kundomdöme",
+          name: "Oscar Malmqvist",
+          text: "Kan varmt rekommendera Amar som varit supertrevlig, pålitlig och kommunikativ.",
+          excerpt: true
+        },
+        {
+          source: "Clicktrans",
+          rating: "Positivt omdöme",
+          name: "Owe",
+          text: "Mycket nöjd, kom i tid, trevlig och hjälpsam, rekommenderas verkligen.",
+          excerpt: true
+        },
+        {
+          source: "Clicktrans",
+          rating: "Positivt omdöme",
+          name: "Jesper",
+          text: "Allt var perfekt! Bra service, snabb leverans! Rekommenderar till ett hundra procent!"
+        },
+        {
+          source: "Clicktrans",
+          rating: "Positivt omdöme",
+          name: "Pehr",
+          text: "Perfekt service och håller tider. Bra kommunikation"
+        },
+        {
+          source: "Clicktrans",
+          rating: "Positivt omdöme",
+          name: "Michael",
+          text: "De hjälpte mig att flytta mina personliga tillhörigheter. Allt kom fram i gott skick.",
+          excerpt: true
+        },
+        {
+          source: "Clicktrans",
+          rating: "Positivt omdöme",
+          name: "Oscar",
+          text: "Mycket trevlig och tillmötesgående. Bra kommunikation och bra pris. Kommer använda dom igen. Finns inget att anmärka på. Riktigt bra!"
+        },
+        {
+          source: "TIMOCOM",
+          rating: "5,0 av 5 · 1 betyg",
+          name: "Betygsättning som leverantör",
+          text: "Kommunikation med affärspartner: 5,0. Punktlighet vid lastning och lossning: 5,0. Hantering av varan: 5,0. Hantering av dokument: 5,0.",
+          summary: true
+        }
+      ];
+
+      reviews.forEach((review, index) => {
+        const card = document.createElement("article");
+        card.className = "review-card";
+        card.setAttribute("aria-roledescription", "bild");
+        card.setAttribute(
+          "aria-label",
+          (index + 1) + " av " + reviews.length
+        );
+
+        const top = document.createElement("div");
+        top.className = "review-top";
+
+        const source = document.createElement("span");
+        source.className = "review-source";
+        source.textContent = review.source;
+
+        const rating = document.createElement("span");
+        rating.className = "review-rating";
+        rating.textContent = review.rating;
+
+        top.append(source, rating);
+
+        const quote = document.createElement(
+          review.summary ? "p" : "blockquote"
+        );
+        quote.className = "review-quote";
+        quote.textContent = review.text;
+
+        const person = document.createElement("p");
+        person.className = "review-person";
+        person.textContent = review.name;
+
+        card.append(top, quote, person);
+
+        if (review.excerpt || review.summary) {
+          const note = document.createElement("span");
+          note.className = "review-excerpt";
+          note.textContent = review.summary
+            ? "Betyg utan skriven kundkommentar"
+            : "Utdrag ur kundens recension";
+          card.append(note);
+        }
+
+        track.append(card);
+      });
+
+      const counter = document.getElementById("review-counter");
+      const pauseButton = document.getElementById("review-pause");
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      let paused = reducedMotion.matches;
+      let hovering = false;
+      let visible = false;
+      let touching = false;
+      let lastInteraction = 0;
+      let activeIndex = 0;
+      let previousWidth = track.clientWidth;
+
+      function currentIndex() {
+        const width = track.clientWidth;
+
+        if (!width) return activeIndex;
+
+        return Math.max(
+          0,
+          Math.min(
+            reviews.length - 1,
+            Math.round(track.scrollLeft / width)
+          )
+        );
+      }
+
+      function updateCounter() {
+        activeIndex = currentIndex();
+        counter.textContent =
+          (activeIndex + 1) + " / " + reviews.length;
+      }
+
+      function move(direction) {
+        const index =
+          (currentIndex() + direction + reviews.length) %
+          reviews.length;
+
+        track.scrollTo({
+          left: index * track.clientWidth,
+          behavior: reducedMotion.matches ? "auto" : "smooth"
+        });
+      }
+
+      function updatePauseButton() {
+        pauseButton.textContent = paused
+          ? "Starta bildspelet"
+          : "Pausa bildspelet";
+
+        pauseButton.setAttribute(
+          "aria-pressed",
+          String(paused)
+        );
+      }
+
+      document.getElementById("review-prev")
+        .addEventListener("click", () => {
+          lastInteraction = Date.now();
+          move(-1);
+        });
+
+      document.getElementById("review-next")
+        .addEventListener("click", () => {
+          lastInteraction = Date.now();
+          move(1);
+        });
+
+      pauseButton.addEventListener("click", () => {
+        paused = !paused;
+        updatePauseButton();
+      });
+
+      slider.addEventListener("mouseenter", () => {
+        hovering = true;
+      });
+
+      slider.addEventListener("mouseleave", () => {
+        hovering = false;
+      });
+
+      track.addEventListener("pointerdown", () => {
+        touching = true;
+        lastInteraction = Date.now();
+      });
+
+      function endTouch() {
+        if (touching) {
+          touching = false;
+          lastInteraction = Date.now();
+        }
+      }
+
+      window.addEventListener("pointerup", endTouch);
+      window.addEventListener("pointercancel", endTouch);
+
+      track.addEventListener("wheel", () => {
+        lastInteraction = Date.now();
+      }, { passive: true });
+
+      track.addEventListener("keydown", event => {
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          lastInteraction = Date.now();
+          move(1);
+        }
+
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          lastInteraction = Date.now();
+          move(-1);
+        }
+      });
+
+      track.addEventListener("scroll", updateCounter, {
+        passive: true
+      });
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          visible = entries[0].isIntersecting;
+        }, { threshold: 0.35 });
+
+        observer.observe(slider);
+      } else {
+        visible = true;
+      }
+
+      window.setInterval(() => {
+        const focused = slider.contains(document.activeElement);
+        const recentlyUsed =
+          Date.now() - lastInteraction < 10000;
+
+        if (
+          !paused &&
+          !hovering &&
+          !touching &&
+          !focused &&
+          !recentlyUsed &&
+          visible &&
+          !document.hidden
+        ) {
+          move(1);
+        }
+      }, 6000);
+
+      function adjustWidth() {
+        const width = track.clientWidth;
+
+        if (width && width !== previousWidth) {
+          previousWidth = width;
+          track.scrollLeft = activeIndex * width;
+        }
+      }
+
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(adjustWidth).observe(track);
+      } else {
+        window.addEventListener("resize", adjustWidth);
+      }
+
+      reducedMotion.addEventListener("change", event => {
+        if (event.matches) {
+          paused = true;
+          updatePauseButton();
+        }
+      });
+
+      updateCounter();
+      updatePauseButton();
+    })();
+  </script>
 </body>
 </html>
