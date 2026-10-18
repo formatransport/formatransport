@@ -570,16 +570,22 @@
     panel.append(row);
   });
 
-  const equipment = document.createElement("div");
-  equipment.className = "rental-equipment";
+const equipment = document.createElement("p");
+equipment.className = "rental-accessories";
 
-  ["Backkamera", "Tre sittplatser", "Bluetooth"].forEach(text => {
-    const item = document.createElement("span");
-    item.textContent = text;
-    equipment.append(item);
-  });
+equipment.textContent =
+  "Vi har det mesta som behövs för lastning och lastsäkring, bland annat pirra, palldragare och spännband. Fråga oss om det du behöver.";
 
-  panel.append(equipment);
+equipment.style.cssText = `
+  margin: 24px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: #c1cec4;
+  font-size: 14px;
+  line-height: 1.8;
+`;
+
+panel.append(equipment);
   facts.replaceWith(panel);
 })();
 
@@ -699,92 +705,98 @@
 
   if (!slider) return;
 
-  const reviews = [
-    {
-      source: "Google",
-      rating: "5 av 5",
-      name: "Jesper Lindstrom",
-      text: "Kanon hela vägen!\nFrån första kontakt tills att hojen stod på uppfarten funkade allt perfa!\nBra pris, snabb leverans"
-    },
-    {
-      source: "Google",
-      rating: "5 av 5",
-      name: "Camilla Löf",
-      text: "Mycket nöjd med allt från kontakt, flexibilitet och hantering 👌"
-    },
-    {
-      source: "Google",
-      rating: "5 av 5",
-      name: "Adnan Sahuric",
-      text: "Otroligt smidigt och hjälpsamma! Rekommenderar verkligen."
-    },
-    {
-      source: "Facebook",
-      rating: "Rekommenderar",
-      name: "Emma Llewellyn",
-      text: "Smidig och pålitlig! Kommer använda igen ⭐"
-    },
-    {
-      source: "Facebook",
-      rating: "Rekommenderar",
-      name: "Nathalie Maria Helena",
-      text: "Väldigt bra företag att ha och göra med. Snabb återkoppling och bra priser! Trevlig chaufför som hämtade i Västerås och körde till en camping i Marks kommun. Rekommenderar er verkligen ✨"
-    },
-    {
-      source: "Facebook",
-      rating: "Rekommenderar",
-      name: "Rasoul Kariminezhad",
-      text: "Jag anlitade Forma Transport för en full last transport och är mycket nöjd med allt från första kontakt till slutförd transport. Kommunikationen fungerade helt felfritt; de tog kontakt exakt när de hade lovat att höra av sig, vilket skapade en stor trygghet genom hela processen. Allt rullade på smidigt, punktligt och utan några som helst problem.\nDet är ett nystartat företag men det märks inte alls. Det märks att de har erfarenhet inom branschen sedan många år tillbaka. De är mycket professionella och pålitliga.\nJag kan rekommendera detta företag till alla som behöver hjälp med transport!\nTack för hjälpen! ⭐⭐⭐⭐⭐"
-    },
-    {
-      source: "Facebook",
-      rating: "Rekommenderar",
-      name: "Tommy Pääkkönen",
-      text: "Smidig upphämtning i Tyresö med leverans i Landskrona väl informerad om leverans tid. Grymt nöjd och gods leveransen kom fram i tid. Kommer absolut att använda Forma Transport igen.⭐⭐⭐⭐⭐\n\nTack Med vänlig hälsning,\nTommy @ FIRESPECT AB"
-    },
-    {
-      source: "Facebook",
-      rating: "Kundomdöme",
-      name: "Oscar Malmqvist",
-      text: "Kan varmt rekommendera Amar som varit supertrevlig, pålitlig och kommunikativ. Han hjälpte mig få hem en pall med gods en Söndagmorgon och levererade på kvällen till Stockholm. Dessutom till ett bra pris! Kommer använda hans transporttjänster igen när det behövs. Ett riktigt guldkorn att ha i sin kontaktlista. Tack Amar för fantastiskt bra service!! 🙏👍💐. Med vänlig hälsning, Oscar"
-    },
-    {
-      source: "Clicktrans",
-      rating: "Positivt omdöme",
-      name: "Owe",
-      text: "Mycket nöjd, kom i tid, trevlig och hjälpsam, rekommenderas verkligen. / Owe"
-    },
-    {
-      source: "Clicktrans",
-      rating: "Positivt omdöme",
-      name: "Jesper",
-      text: "Allt var perfekt! Bra service, snabb leverans! Rekommenderar till ett hundra procent!"
-    },
-    {
-      source: "Clicktrans",
-      rating: "Positivt omdöme",
-      name: "Pehr",
-      text: "Perfekt service och håller tider. Bra kommunikation"
-    },
-    {
-      source: "Clicktrans",
-      rating: "Positivt omdöme",
-      name: "Michael",
-      text: "De hjälpte mig att flytta mina personliga tillhörigheter. Allt kom fram i gott skick. Jag är tacksam för deras hjälp och rekommenderar dem varmt."
-    },
-    {
-      source: "Clicktrans",
-      rating: "Positivt omdöme",
-      name: "Oscar",
-      text: "Mycket trevlig och tillmötesgående. Bra kommunikation och bra pris. Kommer använda dom igen. Finns inget att anmärka på. Riktigt bra!"
-    },
-    {
-      source: "TIMOCOM",
-      rating: "5,0 av 5 · 1 betyg",
-      name: "Betygsättning som leverantör",
-      text: "Kommunikation med affärspartner: 5,0. Punktlighet vid lastning och lossning: 5,0. Hantering av varan: 5,0. Hantering av dokument: 5,0."
-    }
-  ];
+const reviews = [
+  {
+    source: "Google",
+    rating: "5 av 5",
+    name: "Jesper Lindstrom",
+    text: "Kanon hela vägen!\nFrån första kontakt tills att hojen stod på uppfarten funkade allt perfa!\nBra pris, snabb leverans"
+  },
+  {
+    source: "Google",
+    rating: "5 av 5",
+    name: "Camilla Löf",
+    text: "Mycket nöjd med allt från kontakt, flexibilitet och hantering 👌"
+  },
+  {
+    source: "Google",
+    rating: "5 av 5",
+    name: "Adnan Sahuric",
+    text: "Otroligt smidigt och hjälpsamma! Rekommenderar verkligen."
+  },
+  {
+    source: "Facebook",
+    rating: "Rekommenderar",
+    name: "Emma Llewellyn",
+    text: "Smidig och pålitlig! Kommer använda igen ⭐"
+  },
+  {
+    source: "Facebook",
+    rating: "Kundomdöme",
+    name: "Emma Llewellyn",
+    text: "Vill verkligen rekommendera @forma transport abForma Transport AB upp hit till Strängnäs, Sörmland.\n\nDet gick snabbt, smidigt och kommunikationen var verkligen helt sömlös från dörr till dörr utan onödiga förseningar, byten eller strul!\n\nDu får verkligen 5 stjärnor och jag kommer använda detta företag igen! ⭐⭐⭐⭐⭐"
+  },
+  {
+    source: "Facebook",
+    rating: "Rekommenderar",
+    name: "Nathalie Maria Helena",
+    text: "Väldigt bra företag att ha och göra med. Snabb återkoppling och bra priser! Trevlig chaufför som hämtade i Västerås och körde till en camping i Marks kommun. Rekommenderar er verkligen ✨"
+  },
+  {
+    source: "Facebook",
+    rating: "Rekommenderar",
+    name: "Rasoul Kariminezhad",
+    text: "Jag anlitade Forma Transport för en full last transport och är mycket nöjd med allt från första kontakt till slutförd transport. Kommunikationen fungerade helt felfritt; de tog kontakt exakt när de hade lovat att höra av sig, vilket skapade en stor trygghet genom hela processen. Allt rullade på smidigt, punktligt och utan några som helst problem.\nDet är ett nystartat företag men det märks inte alls. Det märks att de har erfarenhet inom branschen sedan många år tillbaka. De är mycket professionella och pålitliga.\nJag kan rekommendera detta företag till alla som behöver hjälp med transport!\nTack för hjälpen! ⭐⭐⭐⭐⭐"
+  },
+  {
+    source: "Facebook",
+    rating: "Rekommenderar",
+    name: "Tommy Pääkkönen",
+    text: "Smidig upphämtning i Tyresö med leverans i Landskrona väl informerad om leverans tid. Grymt nöjd och gods leveransen kom fram i tid. Kommer absolut att använda Forma Transport igen.⭐⭐⭐⭐⭐\n\nTack Med vänlig hälsning,\nTommy @ FIRESPECT AB"
+  },
+  {
+    source: "Facebook",
+    rating: "Kundomdöme",
+    name: "Oscar Malmqvist",
+    text: "Kan varmt rekommendera Amar som varit supertrevlig, pålitlig och kommunikativ. Han hjälpte mig få hem en pall med gods en Söndagmorgon och levererade på kvällen till Stockholm. Dessutom till ett bra pris! Kommer använda hans transporttjänster igen när det behövs. Ett riktigt guldkorn att ha i sin kontaktlista. Tack Amar för fantastiskt bra service!! 🙏👍💐. Med vänlig hälsning, Oscar"
+  },
+  {
+    source: "Clicktrans",
+    rating: "Positivt omdöme",
+    name: "Owe",
+    text: "Mycket nöjd, kom i tid, trevlig och hjälpsam, rekommenderas verkligen. / Owe"
+  },
+  {
+    source: "Clicktrans",
+    rating: "Positivt omdöme",
+    name: "Jesper",
+    text: "Allt var perfekt! Bra service, snabb leverans! Rekommenderar till ett hundra procent!"
+  },
+  {
+    source: "Clicktrans",
+    rating: "Positivt omdöme",
+    name: "Pehr",
+    text: "Perfekt service och håller tider. Bra kommunikation"
+  },
+  {
+    source: "Clicktrans",
+    rating: "Positivt omdöme",
+    name: "Michael",
+    text: "De hjälpte mig att flytta mina personliga tillhörigheter. Allt kom fram i gott skick. Jag är tacksam för deras hjälp och rekommenderar dem varmt."
+  },
+  {
+    source: "Clicktrans",
+    rating: "Positivt omdöme",
+    name: "Oscar",
+    text: "Mycket trevlig och tillmötesgående. Bra kommunikation och bra pris. Kommer använda dom igen. Finns inget att anmärka på. Riktigt bra!"
+  },
+  {
+    source: "TIMOCOM",
+    rating: "5,0 av 5 · 1 betyg",
+    name: "Betygsättning som leverantör",
+    text: "Kommunikation med affärspartner: 5,0. Punktlighet vid lastning och lossning: 5,0. Hantering av varan: 5,0. Hantering av dokument: 5,0."
+  }
+];
 
   const card = document.getElementById("review-card");
   const source = document.getElementById("review-source");
