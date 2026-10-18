@@ -935,3 +935,44 @@ textarea { min-height: 120px; resize: vertical; }
     transition: none !important;
   }
 }
+
+/* Finjusteringar */
+.site-header {
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.button {
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease,
+    transform .2s ease;
+}
+
+.button:not(.secondary):hover {
+  box-shadow: 0 7px 20px rgba(190, 58, 12, .16);
+}
+
+.form-box {
+  border-color: #dfe5df;
+  box-shadow: 0 12px 36px rgba(32, 44, 37, .045);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #a8b7ac;
+  box-shadow: 0 0 0 3px rgba(83, 108, 88, .07);
+}
+
+.review-controls button {
+  transition:
+    background .2s ease,
+    border-color .2s ease;
+}
+
+.review-controls button:hover {
+  border-color: #a8b7ac;
+  background: #f2f5f0;
+}
