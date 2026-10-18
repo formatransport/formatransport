@@ -1,10 +1,14 @@
 "use strict";
 
-/* Mobilens layout och recensionernas utseende */
+/* Layout */
 (() => {
   const style = document.createElement("style");
 
   style.textContent = `
+    #review-note {
+      display: none !important;
+    }
+
     .review-card {
       min-height: 280px;
       overflow: hidden;
@@ -39,19 +43,8 @@
       margin: 0 0 14px;
     }
 
-    .review-note {
-      display: block;
-      color: #707b73;
-      font-size: 10px;
-      margin: 10px 0 0;
-    }
-
     .review-author {
       padding-top: 8px;
-    }
-
-    .review-controls {
-      margin-top: 16px;
     }
 
     .hero-banner h1 {
@@ -60,6 +53,115 @@
 
     .service-content p {
       max-width: 400px;
+    }
+
+    .reviews {
+      padding: 34px 0 80px;
+    }
+
+    .reviews .container {
+      max-width: 1160px;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      column-gap: 64px;
+      align-items: start;
+    }
+
+    .reviews h2 {
+      text-align: left;
+      font-size: 42px;
+      max-width: 340px;
+      line-height: 1.12;
+      padding-top: 28px;
+    }
+
+    #reviews-slider {
+      min-width: 0;
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .review-card {
+      border-radius: 18px;
+      padding: 30px;
+    }
+
+    .review-controls {
+      grid-column: 2;
+      grid-row: 2;
+      margin-top: 16px;
+    }
+
+    /* Uthyrningens bild och specifikationer */
+
+    .rental-overview {
+      gap: 0;
+      align-items: stretch;
+      grid-template-columns: 1fr 1.05fr;
+    }
+
+    .rental-overview .page-copy {
+      background: #202c25;
+      color: white;
+      padding: 44px;
+      border-radius: 18px 0 0 18px;
+    }
+
+    .rental-overview .page-copy h2 {
+      font-size: 38px;
+      letter-spacing: -.04em;
+      max-width: 420px;
+    }
+
+    .rental-overview .page-copy > p {
+      font-size: 15px;
+      color: #c1cec4;
+      line-height: 1.8;
+    }
+
+    .rental-overview .feature-photo {
+      height: 100%;
+      min-height: 540px;
+      border-radius: 0 18px 18px 0;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .rental-details {
+      margin-top: 32px;
+    }
+
+    .rental-spec {
+      border-top: 1px solid #ffffff24;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .rental-spec-label {
+      font-size: 12px;
+      color: #b6c5b9;
+    }
+
+    .rental-spec-value {
+      font-size: 21px;
+      line-height: 1.3;
+      font-weight: 600;
+      letter-spacing: -.025em;
+      text-align: right;
+    }
+
+    .rental-equipment {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      padding-top: 23px;
+      margin-top: 2px;
+      border-top: 1px solid #ffffff24;
+      font-size: 12px;
+      color: #c1cec4;
     }
 
     @media (max-width: 900px) {
@@ -90,6 +192,26 @@
       .js .navigation.open > .button {
         padding: 13px 20px;
         margin-top: 12px;
+      }
+
+      .rental-overview .page-copy {
+        padding: 30px;
+      }
+
+      .rental-overview .page-copy h2 {
+        font-size: 32px;
+      }
+
+      .rental-spec-value {
+        font-size: 18px;
+      }
+
+      .reviews .container {
+        column-gap: 30px;
+      }
+
+      .reviews h2 {
+        font-size: 34px;
       }
     }
 
@@ -248,16 +370,22 @@
       }
 
       .reviews {
-        padding: 8px 0 44px;
+        padding: 8px 0 48px;
+      }
+
+      .reviews .container {
+        display: block;
       }
 
       .reviews h2 {
-        font-size: 27px;
-        margin-bottom: 22px;
+        padding-top: 0;
+        font-size: 28px;
+        max-width: none;
+        margin-bottom: 24px;
       }
 
       .review-card {
-        padding: 22px;
+        padding: 23px;
         min-height: 280px;
         border-radius: 14px;
         box-shadow: 0 10px 26px #18251b06;
@@ -336,6 +464,58 @@
       input, select, textarea {
         font-size: 16px;
       }
+
+      .rental-overview {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .rental-overview .feature-photo {
+        order: -1;
+        height: 280px;
+        min-height: 0;
+        max-height: none;
+        width: 100%;
+        object-fit: cover;
+        object-position: center 45%;
+        border-radius: 16px 16px 0 0;
+      }
+
+      .rental-overview .page-copy {
+        padding: 29px 25px 30px;
+        border-radius: 0 0 16px 16px;
+      }
+
+      .rental-overview .page-copy h2 {
+        font-size: 30px;
+      }
+
+      .rental-overview .page-copy > p {
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .rental-details {
+        margin-top: 25px;
+      }
+
+      .rental-spec {
+        padding: 18px 0;
+        gap: 14px;
+      }
+
+      .rental-spec-label {
+        font-size: 11px;
+      }
+
+      .rental-spec-value {
+        font-size: 19px;
+      }
+
+      .rental-equipment {
+        gap: 10px 17px;
+        font-size: 12px;
+      }
     }
 
     @media (max-width: 360px) {
@@ -356,6 +536,53 @@
   document.head.append(style);
 })();
 
+/* Uthyrningens specifikationer */
+(() => {
+  if (!document.querySelector('form[data-kind="rental"]')) return;
+
+  const overview = document.querySelector(".page-split");
+  const facts = overview && overview.querySelector(".facts");
+
+  if (!facts) return;
+
+  overview.classList.add("rental-overview");
+
+  const panel = document.createElement("div");
+  panel.className = "rental-details";
+
+  [
+    ["Körkort", "Vanligt B-körkort"],
+    ["Växellåda", "Automat & manuell"],
+    ["Lastning", "Bakgavellyft"]
+  ].forEach(([label, value]) => {
+    const row = document.createElement("div");
+    row.className = "rental-spec";
+
+    const title = document.createElement("span");
+    title.className = "rental-spec-label";
+    title.textContent = label;
+
+    const content = document.createElement("span");
+    content.className = "rental-spec-value";
+    content.textContent = value;
+
+    row.append(title, content);
+    panel.append(row);
+  });
+
+  const equipment = document.createElement("div");
+  equipment.className = "rental-equipment";
+
+  ["Backkamera", "Tre sittplatser", "Bluetooth"].forEach(text => {
+    const item = document.createElement("span");
+    item.textContent = text;
+    equipment.append(item);
+  });
+
+  panel.append(equipment);
+  facts.replaceWith(panel);
+})();
+
 /* Mobilmeny */
 (() => {
   const button = document.querySelector(".menu-toggle");
@@ -373,7 +600,6 @@
 
   button.addEventListener("click", () => {
     const open = nav.classList.toggle("open");
-
     button.setAttribute("aria-expanded", String(open));
     button.textContent = open ? "Stäng" : "Meny";
   });
@@ -478,8 +704,7 @@
       source: "Google",
       rating: "5 av 5",
       name: "Jesper Lindstrom",
-      text: "Kanon hela vägen!\nFrån första kontakt tills att hojen stod på uppfarten funkade allt perfa!...",
-      excerpt: true
+      text: "Kanon hela vägen!\nFrån första kontakt tills att hojen stod på uppfarten funkade allt perfa!\nBra pris, snabb leverans"
     },
     {
       source: "Google",
@@ -509,8 +734,7 @@
       source: "Facebook",
       rating: "Rekommenderar",
       name: "Rasoul Kariminezhad",
-      text: "Jag anlitade Forma Transport för en full last transport och är mycket nöjd med allt från första kontakt till slutförd transport. Kommunikationen fungerade helt felfritt; de tog kontakt exakt när de hade lovat att höra av sig, vilket skapade en stor trygghet genom hela processen. Allt rullade på smidigt, punktligt och utan några som helst problem.\nDet är ett nystartat företag men det märks inte alls. Det märks att de har erfarenhet inom branschen sedan många år tillbaka. De är mycket professionella och pålitliga.\nJag kan rekommendera detta företag till a...",
-      excerpt: true
+      text: "Jag anlitade Forma Transport för en full last transport och är mycket nöjd med allt från första kontakt till slutförd transport. Kommunikationen fungerade helt felfritt; de tog kontakt exakt när de hade lovat att höra av sig, vilket skapade en stor trygghet genom hela processen. Allt rullade på smidigt, punktligt och utan några som helst problem.\nDet är ett nystartat företag men det märks inte alls. Det märks att de har erfarenhet inom branschen sedan många år tillbaka. De är mycket professionella och pålitliga.\nJag kan rekommendera detta företag till alla som behöver hjälp med transport!\nTack för hjälpen! ⭐⭐⭐⭐⭐"
     },
     {
       source: "Facebook",
@@ -666,19 +890,12 @@
       .toUpperCase();
 
     if (note) {
-      note.textContent = review.excerpt
-        ? "Utdrag – hela texten saknas i underlaget"
-        : "";
-
-      note.hidden = !review.excerpt;
+      note.textContent = "";
+      note.hidden = true;
     }
 
     more.hidden = review.text.length <= 100;
-
-    more.textContent = review.excerpt
-      ? "Visa tillgänglig text"
-      : "Läs hela recensionen";
-
+    more.textContent = "Läs hela recensionen";
     more.setAttribute("aria-expanded", "false");
 
     counter.textContent = `${index + 1} / ${reviews.length}`;
@@ -719,9 +936,7 @@
 
     more.textContent = reading
       ? "Visa mindre"
-      : reviews[index].excerpt
-        ? "Visa tillgänglig text"
-        : "Läs hela recensionen";
+      : "Läs hela recensionen";
 
     nextAt = Date.now() + 4000;
   });
