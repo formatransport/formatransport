@@ -553,7 +553,8 @@
   [
     ["Körkort", "Vanligt B-körkort"],
     ["Växellåda", "Automat & manuell"],
-    ["Lastning", "Bakgavellyft"]
+    ["Lastning", "Bakgavellyft"],
+    ["Körning", "Backkamera"]
   ].forEach(([label, value]) => {
     const row = document.createElement("div");
     row.className = "rental-spec";
@@ -569,23 +570,7 @@
     row.append(title, content);
     panel.append(row);
   });
-
-const equipment = document.createElement("p");
-equipment.className = "rental-accessories";
-
-equipment.textContent =
-  "Vi har det mesta som behövs för lastning och lastsäkring, bland annat pirra, palldragare och spännband. Fråga oss om det du behöver.";
-
-equipment.style.cssText = `
-  margin: 24px 0 0;
-  padding-top: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  color: #c1cec4;
-  font-size: 14px;
-  line-height: 1.8;
-`;
-
-panel.append(equipment);
+  
   facts.replaceWith(panel);
 })();
 
