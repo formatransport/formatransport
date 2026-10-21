@@ -1,289 +1,482 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-site-verification" content="YZe4tp2CDNp1u--e6DBCag_Jl05P3Q2CpX6bjARnQYM" />
-  <title>Forma Transport – Express leveranser - Sverige & Europa </title>
-  <meta name="description" content="Forma Transport erbjuder snabba transporter, expressbud och samma dag-leverans i stora delar av Sverige. Pålitligt, punktligt och personligt. Begär offert idag." />
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Forma Transport – Din hjälpande hand">
-  <meta property="og:description" content="Snabba transporter och leverans samma dag i stora delar av Sverige. Professionellt, punktligt och tryggt.">
-  <meta property="og:image" content="logga.png">
-  <meta property="og:locale" content="sv_SE">
-  
-<link rel="icon" type="image/png" href="logotyp1.png">
-<link rel="shortcut icon" href="logotyp1.png">
-  <!-- Styles -->
-  <link rel="stylesheet" href="forma.css">
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta
+    name="description"
+    content="Godstransporter och uthyrning av lätta lastbilar för företag och privatpersoner. Personlig service hela vägen."
+  >
+
+  <title>Transporter &amp; uthyrning | Forma Transport</title>
+
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="test.css?v=10">
+
+  <script src="test.js?v=10" defer></script>
 </head>
-  <div id="cookieConsent" class="cookie-consent">
-  <div class="cookie-box">
-    <h3>This website uses cookies</h3>
 
-    <p>
-      We use cookies to personalise content and ads, to provide social media features and to analyse our traffic.
-      We also share information about your use of our site with our social media, advertising and analytics partners.
-    </p>
-
-    <div class="cookie-buttons">
-      <button onclick="cookieChoice('deny')" class="btn-cookies deny">Deny</button>
-      <button onclick="cookieChoice('selection')" class="btn-cookies select">Allow selection</button>
-      <button onclick="cookieChoice('all')" class="btn-cookies allow">Allow all</button>
-    </div>
-
-    <small onclick="toggleDetails()" class="cookie-details-toggle">
-      Show details
-    </small>
-
-    <div id="cookieDetails" class="cookie-details hidden">
-      <p>Necessary cookies are always enabled. Preferences, statistics and marketing can be controlled.</p>
-    </div>
-  </div>
-</div>
 <body>
-  <a class="skip-link" href="#main">Hoppa till innehåll</a>
+  <a class="skip" href="#innehall">
+    Hoppa till innehåll
+  </a>
 
-  <!-- HEADER med liten logga -->
-  <header class="site-header" aria-label="Huvudmeny">
+  <!-- Sidhuvud -->
+  <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="Hem">
-        <img src="forma.png" alt="Forma Transport logotyp" class="brand-logo">
-
+      <a
+        href="index.html"
+        aria-label="Forma Transport – startsida"
+      >
+        <img
+          class="logo"
+          src="logo.jpg"
+          width="300"
+          height="118"
+          alt="Forma Transport"
+        >
       </a>
 
-      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Öppna/Stäng meny">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="huvudmeny"
+      >
+        Meny
       </button>
 
-      <nav id="main-nav" class="nav">
-        <ul>
-          <li><a href="#tjanster">Tjänster</a></li>
-          <li><a href="#om-oss">Om oss</a></li>
-          <li><a href="#offert">Begär offert</a></li>
-          <li><a href="#kontakt">Boka transport</a></li>
-        </ul>
+      <nav
+        class="navigation"
+        id="huvudmeny"
+        aria-label="Huvudmeny"
+      >
+        <a href="index.html" aria-current="page">
+          Start
+        </a>
+
+        <a href="transport.html">
+          Godstransporter
+        </a>
+
+        <a href="uthyrning.html">
+          Uthyrning
+        </a>
+
+        <a href="index.html#om-oss">
+          Om oss
+        </a>
+
+        <a href="#kontakt">
+          Kontakt
+        </a>
+
+        <a class="button" href="transport.html#offert">
+          Begär offert
+        </a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
+  <main id="innehall">
 
-  <!-- HERO -->
-<section class="hero" id="top">
-  <div class="container hero-inner no-img">
+    <!-- Huvudbild och introduktion -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-banner">
+          <img
+            class="banner-image"
+            src="motorvag.png"
+            width="1672"
+            height="941"
+            alt="Illustration av Forma Transports lätta lastbilar på en svensk motorväg"
+            fetchpriority="high"
+          >
 
-    <div class="hero-copy">
-<div class="hero-logo-wrapper">
-  <img src="forma.png" class="hero-big-logo" alt="Forma Transport">
-</div>
-    <p class="hero-tagline">Snabba transporter Sverige & Europa – formade efter dina behov</p>
-      
-      <p class="lead">
-        Vi hjälper företag, e-handlare, bygg och privatpersoner med
-        <strong>expressbud</strong> och <strong>samma dag-leverans</strong>.
-        Tryggt, punktligt och personligt.
-      </p>
+          <div class="hero-copy">
+            <p class="eyebrow">
+              Transporter &amp; uthyrning
+            </p>
 
-      <ul class="trust-points">
-        <li>✓ Snabba och säkra leveranser</li>
-        <li>✓ Sverige & hela Europa </li>
-        <li>✓ Gemenskapstillstånd - ADR - försäkrade hela vägen</li>
-      </ul>
+            <h1>
+              Transporter formade efter dina behov.
+            </h1>
 
-    </div>
-  </div>
-</section>
+            <p class="intro">
+              Vi tar hand om din leverans – eller hjälper dig
+              att köra själv. Personlig service hela vägen.
+            </p>
+
+            <div class="actions">
+              <a class="button" href="transport.html">
+                Vi kör åt dig
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <a
+                class="button secondary"
+                href="uthyrning.html"
+              >
+                Hyr lätt lastbil
+              </a>
+            </div>
+
+            <p class="hero-small">
+              För företag och privatpersoner
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Tjänster -->
-    <section id="tjanster" class="section">
+    <section class="section">
       <div class="container">
-        <header class="section-header">
-          <h2>Tjänster</h2>
-          <p>Snabba, flexibla och säkra leveranser – från expressbud till specialtransporter.</p>
-        </header>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">
+              Två sätt att komma vidare
+            </p>
 
-        <div class="card-grid">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">🚐</div>
-           <h3>Europa & Sverige transporter</h3>
-          <p>Snabba och säkra transporter i hela Sverige och Europa.</p>
+            <h2>
+              Vi kör. Eller du.
+            </h2>
+          </div>
+        </div>
+
+        <div class="services">
+
+          <article class="service-card">
+            <img
+              src="formacar4.png"
+              width="1122"
+              height="1402"
+              alt="Lastbil vid lagerport med säkrat gods och nedfälld bakgavellyft"
+              loading="lazy"
+            >
+
+            <div class="service-content">
+              <h3>Godstransporter</h3>
+
+              <p>
+                Express, direktkörningar och återkommande
+                leveranser. Vi anpassar transporten efter
+                ditt gods och din tidsplan.
+              </p>
+
+              <a class="text-link" href="transport.html">
+                Läs om våra transporter
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">⚡</div>
-            <h3>Expressbud</h3>
-            <p>Direktkörningar utan omlastning – snabbt, säkert och spårbart från A till B.</p>
+          <article class="service-card">
+            <img
+              src="formacar.png"
+              width="1448"
+              height="1086"
+              alt="Lätt lastbil med stort lastutrymme för uthyrning"
+              loading="lazy"
+            >
+
+            <div class="service-content">
+              <h3>Hyr lätt lastbil</h3>
+
+              <p>
+                Rymligt lastutrymme, bakgavellyft och vanligt
+                B-körkort. Vi erbjuder både automat och
+                manuell växellåda.
+              </p>
+
+              <a class="text-link" href="uthyrning.html">
+                Läs om uthyrning
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">🏢</div>
-            <h3>Företagstransporter</h3>
-            <p>Regelbundna leveranser och pålitlig distribution för företag och e‑handlare.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">🧰</div>
-            <h3>Specialtransporter</h3>
-            <p>Ömtåligt, skrymmande eller tidskritiskt gods – vi anpassar lösningen efter behov.</p>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- Om oss (branschpassande bildgalleri – behåll eller ta bort enkelt i HTML) -->
-    <section id="om-oss" class="section section-alt">
+    <!-- Om oss -->
+    <section class="section about" id="om-oss">
       <div class="container about-grid">
         <div class="about-copy">
-          <h2>Om oss</h2>
-          <p>
-            <strong>Forma Transport AB</strong> är ett pålitligt, serviceinriktat transportföretag
-            med fokus på <em>snabbhet</em>, <em>säkerhet</em> och <em>personlig service</em>. 
-            Vi arbetar med företag, e-handel och privatpersoner och erbjuder flexibla transportlösningar 
-            anpassade efter varje uppdrag – från expressbud till längre körningar. Vår styrka ligger i kombinationen 
-            av erfaren chaufförskompetens och många års erfarenhet från säkerhetsbranschen, vilket ger ett extra fokus 
-            på struktur, ansvar och trygg hantering av gods. Vi tror på tydlig kommunikation, pålitlighet och personlig service i varje uppdrag – oavsett storlek.
+          <p class="eyebrow">
+            Om Forma Transport
           </p>
-          <ul class="checklist">
-            <li>Personlig kontakt och tydlig kommunikation</li>
-            <li>Trygg hantering och säkra leveranser</li>
-            <li>Transparenta priser och snabba offerter</li>
-          </ul>
-        </div>
-        <div class="about-gallery">
-          <img src="arbeta.PNG" alt="Arbete transport">
 
-          <img src="skåpbil.png" alt="Detalj av lätt lastbil">
+          <h2>
+            Personlig service.<br>
+            Ansvar i varje steg.
+          </h2>
+
+          <p>
+            Forma Transport AB hjälper företag och privatpersoner
+            med flexibla transportlösningar – från expressbud till
+            längre körningar. Vi anpassar varje uppdrag efter
+            godset, tiden och dina behov.
+          </p>
+
+          <p>
+            Vår bakgrund inom transport och säkerhetsbranschen
+            präglar hur vi arbetar: med struktur, tydlig
+            kommunikation och omsorg om det du lämnar i våra händer.
+          </p>
+
+          <p>
+            Vi erbjuder även uthyrning av lätta lastbilar för dig
+            som vill köra själv. Oavsett tjänst ska det vara enkelt
+            att få kontakt och tydligt vad vi kommer överens om.
+          </p>
+
+          <a class="text-link" href="#kontakt">
+            Prata med oss
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <img
+          src="formacar5.png"
+          width="1448"
+          height="1086"
+          alt="Forma Transport på uppdrag ombord på en färja"
+          loading="lazy"
+        >
+      </div>
+    </section>
+
+    <!-- Arbetssätt -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">
+              Så arbetar vi
+            </p>
+
+            <h2>
+              Tryggt från början till slut.
+            </h2>
+          </div>
+        </div>
+
+        <div class="benefits">
+          <article class="benefit">
+            <h3>En tydlig kontakt</h3>
+
+            <p>
+              Vi lyssnar på ditt behov och håller en personlig
+              dialog genom hela uppdraget.
+            </p>
+          </article>
+
+          <article class="benefit">
+            <h3>Omsorg om ditt gods</h3>
+
+            <p>
+              Lastning, hantering och leverans planeras efter
+              godset och uppdragets förutsättningar.
+            </p>
+          </article>
+
+          <article class="benefit">
+            <h3>Flexibla upplägg</h3>
+
+            <p>
+              En enstaka körning, återkommande transporter eller
+              en lastbil att hyra – vi hjälper dig vidare.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Offert -->
-    <section id="offert" class="section">
+    <!-- Kundomdömen -->
+    <section
+      class="reviews"
+      aria-labelledby="reviews-title"
+    >
       <div class="container">
-        <header class="section-header">
-          <h2>Begär offert</h2>
-          <p>Fyll i formuläret så återkommer vi till dig.</p>
-        </header>
+        <h2 id="reviews-title">
+          Vad våra kunder säger
+        </h2>
 
-   <form id="offertForm"
-      action="https://formspree.io/f/xykagkbd"
-      method="POST"
-      class="form card">
-     <input type="hidden" name="_subject" value="Ny offertförfrågan från Forma Transport">
-<input type="hidden" name="_next" value="https://formatransport.github.io/formatransport/">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="namn">Namn*</label>
-              <input type="text" id="namn" name="namn" placeholder="För- och efternamn" required>
-            </div>
-            <div class="form-field">
-              <label for="foretag">Företag (valfritt)</label>
-              <input type="text" id="foretag" name="foretag" placeholder="Företagsnamn">
-            </div>
-          </div>
+        <div
+          id="reviews-slider"
+          role="region"
+          aria-label="Kundomdömen"
+          aria-roledescription="karusell"
+          tabindex="0"
+        >
+          <article class="review-card" id="review-card">
+            <div class="review-top">
+              <span
+                class="review-source"
+                id="review-source"
+              >
+                Google
+              </span>
 
-          <div class="form-row">
-            <div class="form-field">
-              <label for="telefon">Telefon*</label>
-              <input type="tel" id="telefon" name="telefon" placeholder="+46..." required>
+              <span
+                class="review-rating review-stars"
+                id="review-rating"
+                role="img"
+                aria-label="5 av 5"
+              >
+                ★★★★★
+              </span>
             </div>
-            <div class="form-field">
-              <label for="epost">E‑post*</label>
-              <input type="email" id="epost" name="epost" placeholder="namn@exempel.se" required>
-            </div>
-          </div>
 
-          <div class="form-row">
-            <div class="form-field">
-              <label for="upphamtning">Upphämtningsadress*</label>
-              <input type="text" id="upphamtning" name="upphamtning" placeholder="Gata, postnr, ort" required>
-            </div>
-            <div class="form-field">
-              <label for="leverans">Leveransadress*</label>
-              <input type="text" id="leverans" name="leverans" placeholder="Gata, postnr, ort" required>
-            </div>
-          </div>
+            <blockquote
+              class="review-quote"
+              id="review-text"
+            >
+              Kanon hela vägen!
+              Från första kontakt tills att hojen stod på
+              uppfarten funkade allt perfa!
+              Bra pris, snabb leverans
+            </blockquote>
 
-          <div class="form-row">
-            <div class="form-field">
-              <label for="datum">Datum*</label>
-              <input type="date" id="datum" name="datum" required>
-            </div>
-            <div class="form-field">
-              <label for="meddelande">Meddelande</label>
-              <textarea id="meddelande" name="meddelande" rows="4" placeholder="Beskriv godset, mått, vikt, tidsfönster..."></textarea>
-            </div>
-          </div>
+            <p class="review-author" id="review-author">
+              Jesper Lindstrom
+            </p>
 
-          <div class="form-actions">
-            <button type="submit" class="btn btn-accent btn-lg">Skicka offertförfrågan</button>
-            <p class="form-note">Vi värnar om din integritet. Uppgifterna används endast för att besvara din förfrågan.</p>
-          </div>
+            <p
+              class="review-note"
+              id="review-note"
+              hidden
+            ></p>
+          </article>
+        </div>
 
-          <div id="formSuccess" class="form-success" role="status" aria-live="polite" hidden>
-            Tack! Din förfrågan är skickad. Vi återkommer snarast.
-          </div>
-        </form>
+        <div
+          class="review-controls"
+          id="review-controls"
+          hidden
+        >
+          <button
+            type="button"
+            id="review-prev"
+            aria-label="Föregående recension"
+            aria-controls="review-card"
+          >
+            ←
+          </button>
+
+          <button
+            type="button"
+            id="review-next"
+            aria-label="Nästa recension"
+            aria-controls="review-card"
+          >
+            →
+          </button>
+
+          <span class="review-counter" id="review-counter">
+            1 / 15
+          </span>
+        </div>
       </div>
     </section>
 
     <!-- Kontakt -->
-    <section id="kontakt" class="section section-alt">
+    <section class="contact-band" id="kontakt">
       <div class="container contact-grid">
         <div>
-          <h2>Kontakt</h2>
-          <p>Behöver du snabb hjälp eller vill boka transport direkt? Hör av dig!</p>
-          <ul class="contact-list">
-            <li><a href="tel:+46760217261"><strong>+46 76 021 7261</strong></a></li>
-            <li><a href="mailto:info@formatransport.se">info@formatransport.se</a></li>
-            <li><a href="https://www.facebook.com/formatransportab" rel="noopener">Facebook</a></li>
-          </ul>
-          <div class="coverage">
-            <strong>Område vi täcker:</strong> Hela Sverige & Europa – kontakta oss för snabb bedömning.
+          <p class="eyebrow">
+            Vi hjälper dig vidare
+          </p>
+
+          <h2>
+            Vad behöver du hjälp med?
+          </h2>
+
+          <p>
+            En leverans som ska fram eller en lastbil att hyra?
+            Berätta vad du behöver så hittar vi ett passande upplägg.
+          </p>
+
+          <div class="actions">
+            <a
+              class="button"
+              href="transport.html#offert"
+            >
+              Begär transportoffert
+            </a>
+
+            <a
+              class="button secondary"
+              href="uthyrning.html#bokning"
+            >
+              Fråga om uthyrning
+            </a>
           </div>
         </div>
 
-        <!-- Om du vill ta bort denna bild också – radera bara div.contact-visual nedan -->
-        <div class="contact-visual">
-        <img src="formatransportab.png" alt="Forma Transport">
+        <div class="contact-links">
+          <a href="tel:+46760217261">
+            076-021 72 61
+          </a>
+
+          <a href="mailto:info@formatransport.se">
+            info@formatransport.se
+          </a>
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="brand-footer">
-        <a href="#top" class="brand" aria-label="Hem">
-          <img src="logotyp1.png" alt="Forma Transport" class="footer-logo">
-          <span class="brand-text"><strong>Forma Transport AB</strong></span>
-        </a>
-        <p class="footer-desc">
-          Snabba transporter och leverans samma dag. Pålitligt, punktligt och personligt.
-        </p>
+  <!-- Sidfot -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p>
+            <strong>Forma Transport AB</strong>
+          </p>
+
+          <p>
+            Godstransporter &amp; lastbilsuthyrning
+          </p>
+        </div>
+
+        <nav aria-label="Sidfotsmeny">
+          <a href="index.html#om-oss">
+            Om oss
+          </a>
+
+          <a href="transport.html">
+            Godstransporter
+          </a>
+
+          <a href="uthyrning.html">
+            Uthyrning
+          </a>
+
+          <a
+            href="https://www.facebook.com/formatransportab"
+            rel="noopener"
+          >
+            Facebook
+          </a>
+        </nav>
       </div>
 
-      <nav class="footer-nav" aria-label="Sidfotsnavigering">
-        <a href="#tjanster">Tjänster</a>
-        <a href="#om-oss">Om oss</a>
-        <a href="#offert">Begär offert</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-
-      <div class="footer-contact">
-        <a href="tel:+46760217261">+46 760217261</a>
-        <a href="mailto:info@formatransport.se">info@formatransport.se</a>
-       <a href="https://www.facebook.com/formatransportab" rel="noopener">Facebook</a>
+      <div class="footer-bottom">
+        © Forma Transport AB · Org.nr 559578-7085
       </div>
-    </div>
-    <div class="container footer-meta">
-      <small>© <span id="year"></span> Forma Transport AB. Alla rättigheter förbehållna.</small>
     </div>
   </footer>
-
-  <!-- Script -->
-  <script src="forma.js" defer></script>
 </body>
 </html>
-
