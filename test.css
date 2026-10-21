@@ -314,7 +314,7 @@ p { margin: 0 0 20px; }
   transition: transform .7s;
 }
 
-.service-card:first-child > img { object-position: left 46%; }
+.service-card:first-child > img { object-position: 35% 46%; }
 .service-card:last-child > img { object-position: 50% 45%; }
 
 .service-card::after {
