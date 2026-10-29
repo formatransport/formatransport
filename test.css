@@ -1187,3 +1187,57 @@ textarea:focus {
     font-size: 20px;
   }
 }
+
+/* Kompaktare kort för intyg och försäkring */
+
+#transport-assurance {
+  padding-bottom: 32px;
+}
+
+#transport-assurance .transport-assurance-grid {
+  gap: 12px;
+}
+
+#transport-assurance .transport-assurance-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+#transport-assurance .transport-assurance-card svg {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+}
+
+#transport-assurance .transport-assurance-card h3 {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+#transport-assurance .transport-assurance-card::before {
+  top: 16px;
+  bottom: 16px;
+  left: 0;
+  width: 3px;
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  #transport-assurance .transport-assurance-grid {
+    gap: 8px;
+  }
+
+  #transport-assurance .transport-assurance-card {
+    padding: 15px 18px;
+  }
+
+  #transport-assurance .transport-assurance-card h3 {
+    font-size: 16px;
+  }
+}
