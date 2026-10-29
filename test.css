@@ -976,3 +976,128 @@ textarea:focus {
   border-color: #a8b7ac;
   background: #f2f5f0;
 }
+
+/* Om oss – utan reklambild */
+
+#om-oss.forma-about {
+  background: #f7f7f5;
+}
+
+#om-oss .forma-about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(32px, 6vw, 88px);
+}
+
+#om-oss .forma-about-heading h2 {
+  margin: 0;
+  max-width: 14ch;
+  color: #222629;
+  font-size: clamp(30px, 3.5vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+#om-oss .forma-about-text {
+  min-width: 0;
+  max-width: 65ch;
+}
+
+#om-oss .forma-about-text p {
+  margin: 0 0 20px;
+  color: #555b60;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+#om-oss .forma-about-text .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+#om-oss .forma-credentials {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 48px 0 0;
+  padding: 26px 0;
+  list-style: none;
+  border-top: 1px solid #dcdedb;
+  border-bottom: 1px solid #dcdedb;
+}
+
+#om-oss .forma-credentials li {
+  margin: 0;
+  padding: 8px 20px;
+  color: #30363a;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#om-oss .forma-credentials li + li {
+  border-left: 1px solid #dcdedb;
+}
+
+#om-oss .forma-about-delivery {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 30px;
+}
+
+#om-oss .forma-about-delivery h3 {
+  margin: 0 0 8px;
+  color: #222629;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+#om-oss .forma-about-delivery p {
+  margin: 0;
+  color: #555b60;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+#om-oss .forma-about-delivery .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  #om-oss .forma-about-layout {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  #om-oss .forma-credentials {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+    padding: 8px 0;
+  }
+
+  #om-oss .forma-credentials li {
+    padding: 16px 0;
+    text-align: left;
+  }
+
+  #om-oss .forma-credentials li + li {
+    border-left: 0;
+    border-top: 1px solid #dcdedb;
+  }
+
+  #om-oss .forma-about-delivery {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+}
