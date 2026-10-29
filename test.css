@@ -1101,3 +1101,89 @@ textarea:focus {
     gap: 18px;
   }
 }
+
+/* Godstransporter – intyg, tillstånd och försäkring */
+
+#transport-assurance {
+  padding: 0 0 clamp(40px, 6vw, 80px);
+}
+
+#transport-assurance .transport-assurance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+#transport-assurance .transport-assurance-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  padding: 38px 28px 32px;
+  color: #ffffff;
+  background: linear-gradient(145deg, #2c3035, #191c20);
+  border: 1px solid #3c4147;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(20, 24, 28, 0.1);
+}
+
+#transport-assurance .transport-assurance-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 48px;
+  height: 3px;
+  background: #f5823a;
+}
+
+#transport-assurance .transport-assurance-card svg {
+  display: block;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 28px;
+  color: #ff9b5e;
+}
+
+#transport-assurance .transport-assurance-card h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(19px, 1.8vw, 25px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  #transport-assurance .transport-assurance-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  #transport-assurance .transport-assurance-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 26px;
+    border-radius: 14px;
+  }
+
+  #transport-assurance .transport-assurance-card::before {
+    top: 22px;
+    bottom: 22px;
+    left: 0;
+    width: 3px;
+    height: auto;
+  }
+
+  #transport-assurance .transport-assurance-card svg {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    margin: 0;
+  }
+
+  #transport-assurance .transport-assurance-card h3 {
+    font-size: 20px;
+  }
+}
